@@ -124,6 +124,59 @@
       border-bottom: 2px solid var(--f13-violet);
     }
 
+    /* ── BARRE CLIENT ── */
+    .client-bar {
+      background: var(--bg-3);
+      border-bottom: 1px solid var(--border-1);
+    }
+    .client-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .client-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--f13-violet-700);
+      flex-shrink: 0;
+    }
+    .client-select {
+      padding: 8px 12px;
+      border: 1.5px solid var(--border-2);
+      border-radius: var(--radius-sm);
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--fg-1);
+      background: var(--bg-1);
+      cursor: pointer;
+      max-width: 220px;
+    }
+    .client-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border: 1.5px solid var(--border-2);
+      border-radius: var(--radius-sm);
+      background: var(--bg-1);
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--fg-2);
+      cursor: pointer;
+      transition: all 120ms var(--ease);
+      white-space: nowrap;
+    }
+    .client-action-btn:hover { border-color: var(--f13-violet); color: var(--f13-violet); }
+    .client-action-btn.danger:hover { border-color: var(--danger); color: var(--danger); background: #FEF2F2; }
+    .client-bar-spacer { flex: 1; }
+
     /* ── MAIN ── */
     .tab-panel { display: none; padding: 40px; max-width: 1200px; margin: 0 auto; }
     .tab-panel.active { display: block; }
@@ -348,6 +401,112 @@
     }
     .delete-btn:hover { border-color: var(--danger); color: var(--danger); background: #FEF2F2; }
 
+    /* ── BOUTON DÉTAILS ── */
+    .details-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border: 1.5px solid var(--border-2);
+      border-radius: var(--radius-pill);
+      background: transparent;
+      font-family: "Roboto", sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--fg-3);
+      cursor: pointer;
+      transition: all 120ms var(--ease);
+    }
+    .details-btn:hover { border-color: var(--f13-violet); color: var(--f13-violet); }
+    .details-btn.has-details { border-color: var(--f13-violet-300); color: var(--f13-violet-700); background: var(--f13-violet-50); }
+
+    /* ── MODALE DÉTAILS ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,.45);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      background: var(--f13-paper);
+      border: 2px solid var(--f13-ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-offset-md);
+      padding: 32px;
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .modal-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .modal-title {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--fg-1);
+      line-height: 1.3;
+    }
+    .modal-subtitle {
+      font-size: 13px;
+      color: var(--fg-3);
+      margin-top: 2px;
+    }
+    .modal-close {
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--border-1);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--fg-3);
+      flex-shrink: 0;
+      transition: all 120ms var(--ease);
+    }
+    .modal-close:hover { border-color: var(--fg-2); color: var(--fg-1); }
+    .modal-textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border-2);
+      border-radius: var(--radius-sm);
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: var(--fg-1);
+      background: var(--bg-1);
+      resize: vertical;
+      transition: border-color 120ms var(--ease), box-shadow 120ms var(--ease);
+    }
+    .modal-textarea:focus {
+      outline: none;
+      border-color: var(--f13-violet);
+      box-shadow: 0 0 0 3px rgba(136,116,226,.15);
+    }
+    .modal-footer { display: flex; justify-content: flex-end; gap: 10px; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      border: 1.5px solid var(--border-2);
+      border-radius: var(--radius-md);
+      background: transparent;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600; font-size: 14px;
+      color: var(--fg-2);
+      cursor: pointer;
+      transition: all 120ms var(--ease);
+    }
+    .btn-secondary:hover { border-color: var(--fg-2); color: var(--fg-1); }
+
     /* ── ÉTAT VIDE ── */
     .empty-state {
       text-align: center;
@@ -537,6 +696,7 @@
     @media (max-width: 900px) {
       .app-header { padding: 0; }
       .header-inner { padding: 8px 20px 0; }
+      .client-bar-inner { padding: 10px 20px; }
       .tab-panel { padding: 24px 20px; }
       .form-grid { grid-template-columns: 1fr 1fr; }
       .form-row-bottom { grid-template-columns: 1fr; }
@@ -550,6 +710,9 @@
       .tab-btn { padding: 8px 14px; font-size: 13px; }
       .form-grid { grid-template-columns: 1fr; }
       .case-meta { gap: 8px; }
+      .client-bar-inner { padding: 8px 16px; gap: 8px; }
+      .client-action-btn { padding: 6px 10px; font-size: 12px; }
+      .client-select { max-width: 140px; font-size: 13px; }
     }
 
     /* ── MOTION ── */
@@ -571,11 +734,28 @@
       </button>
       <button class="tab-btn" data-tab="inaction">
         <i data-lucide="trending-down" size="16"></i>
-        Coût de l'inaction
+        Coût actuel
       </button>
     </nav>
   </div>
 </header>
+
+<!-- BARRE CLIENT -->
+<div class="client-bar">
+  <div class="client-bar-inner">
+    <div class="client-select-wrap">
+      <i data-lucide="building-2" size="16"></i>
+      <select class="client-select" id="client-select"></select>
+    </div>
+    <button class="client-action-btn" id="btn-new-client"><i data-lucide="plus" size="14"></i> Nouveau client</button>
+    <button class="client-action-btn" id="btn-rename-client"><i data-lucide="pencil" size="14"></i> Renommer</button>
+    <button class="client-action-btn danger" id="btn-delete-client"><i data-lucide="trash-2" size="14"></i> Supprimer</button>
+    <div class="client-bar-spacer"></div>
+    <button class="client-action-btn" id="btn-export-clients"><i data-lucide="download" size="14"></i> Exporter tout</button>
+    <button class="client-action-btn" id="btn-import-clients"><i data-lucide="upload" size="14"></i> Importer</button>
+    <input type="file" id="import-file-input" accept="application/json" style="display:none" />
+  </div>
+</div>
 
 <!-- ══ ONGLET 1 : CAS D'USAGES ══ -->
 <section class="tab-panel active" id="tab-cases">
@@ -595,11 +775,18 @@
         <input class="form-input" id="f-nom" type="text" placeholder="Ex : relances clients, reporting mensuel…" />
       </div>
       <div class="form-group">
-        <label class="form-label">Fréquence / semaine</label>
-        <input class="form-input" id="f-freq" type="number" min="1" placeholder="Combien de fois ?" />
+        <label class="form-label">Fréquence</label>
+        <div style="display:flex;gap:8px;">
+          <input class="form-input" id="f-freq" type="number" min="1" placeholder="Combien de fois ?" style="flex:1;min-width:0;" />
+          <select class="form-select" id="f-freq-unit" style="flex:0 0 112px;">
+            <option value="week">/ semaine</option>
+            <option value="month">/ mois</option>
+            <option value="year">/ année</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label class="form-label">Durée (min)</label>
+        <label class="form-label">Durée (en minutes à chaque fois)</label>
         <input class="form-input" id="f-duree" type="number" min="1" placeholder="même à la louche" />
       </div>
       <div class="form-group">
@@ -640,7 +827,7 @@
       <div class="impact-group">
         <label class="form-label">Impact business — si tu faisais plus de cette action, est-ce que tu ferais plus d'argent ?</label>
         <div class="impact-options" id="impact-options">
-          <button class="impact-btn selected" data-impact="low">Faible</button>
+          <button class="impact-btn selected" data-impact="low">Faible/Non</button>
           <button class="impact-btn" data-impact="middle">Moyen</button>
           <button class="impact-btn" data-impact="high">Élevé</button>
         </div>
@@ -679,8 +866,8 @@
 <section class="tab-panel" id="tab-inaction">
 
   <p class="eyebrow">Analyse financière</p>
-  <h1 class="page-title">Le coût de l'inaction.</h1>
-  <p class="page-subtitle">Sélectionnez les processus concernés et renseignez votre taux horaire.</p>
+  <h1 class="page-title">Le coût actuel.</h1>
+  <p class="page-subtitle">Sélectionnez les processus concernés et renseignez le salaire mensuel net de la personne concernée.</p>
 
   <div class="inaction-layout">
 
@@ -700,10 +887,10 @@
       <div class="stats-card">
         <div class="slider-section">
           <div class="slider-header">
-            <span class="slider-label">Taux horaire</span>
-            <div class="slider-value"><span id="slider-display">50</span> <span>€/HT</span></div>
+            <span class="slider-label">Salaire mensuel net</span>
+            <div class="slider-value"><span id="slider-display">2000</span> <span>€/mois</span></div>
           </div>
-          <input type="range" id="taux-slider" min="20" max="300" value="50" step="5" />
+          <input type="range" id="taux-slider" min="1500" max="5000" value="2000" step="100" />
         </div>
 
         <hr class="stats-divider" />
@@ -711,7 +898,7 @@
         <div class="stat-row">
           <div class="stat-icon-wrap"><i data-lucide="clock" size="20"></i></div>
           <div class="stat-content">
-            <div class="stat-label">Temps perdu / semaine</div>
+            <div class="stat-label">Temps passé / semaine</div>
             <div class="stat-number" id="stat-temps"><span class="counter" data-val="0">0</span> min</div>
           </div>
         </div>
@@ -719,7 +906,7 @@
         <div class="stat-row">
           <div class="stat-icon-wrap"><i data-lucide="calendar" size="20"></i></div>
           <div class="stat-content">
-            <div class="stat-label">Perte mensuelle</div>
+            <div class="stat-label">Coût mensuel</div>
             <div class="stat-number highlight" id="stat-mensuel"><span class="counter" data-val="0">0</span> €</div>
           </div>
         </div>
@@ -727,7 +914,7 @@
         <div class="stat-row">
           <div class="stat-icon-wrap"><i data-lucide="trending-down" size="20"></i></div>
           <div class="stat-content">
-            <div class="stat-label">Perte annuelle</div>
+            <div class="stat-label">Coût annuel</div>
             <div class="stat-number highlight" id="stat-annuel"><span class="counter" data-val="0">0</span> €</div>
           </div>
         </div>
@@ -737,35 +924,189 @@
   </div>
 </section>
 
+<!-- Modale Détails -->
+<div class="modal-overlay" id="modal-details" role="dialog" aria-modal="true">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modal-case-name"></div>
+        <div class="modal-subtitle">Notes et détails du processus</div>
+      </div>
+      <button class="modal-close" id="modal-close" title="Fermer"><i data-lucide="x" size="16"></i></button>
+    </div>
+    <textarea class="modal-textarea" id="modal-textarea" placeholder="Décrivez le processus, ses contraintes, les outils impliqués, les parties prenantes…"></textarea>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="modal-cancel">Annuler</button>
+      <button class="btn-primary" id="modal-save"><i data-lucide="save" size="14"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
 <script>
   // ── Init Lucide ──
   lucide.createIcons();
 
-  // ── État global ──
-  let cases = loadCases();
+  // ── Multi-clients : état global ──
+  function createClientObj(name, cases) {
+    return {
+      id: 'client-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+      name,
+      cases: cases || [],
+      checkedIds: [],
+      inactionInitialized: false,
+      salaire: 2000
+    };
+  }
+
+  function loadClients() {
+    try {
+      const raw = localStorage.getItem('f13-clients');
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length) return parsed;
+      }
+    } catch (e) {}
+    // Migration depuis l'ancien format mono-client
+    try {
+      const oldRaw = localStorage.getItem('f13-cases');
+      if (oldRaw) {
+        const oldCases = JSON.parse(oldRaw);
+        if (Array.isArray(oldCases) && oldCases.length) {
+          return [createClientObj('Client 1', oldCases)];
+        }
+      }
+    } catch (e) {}
+    return [createClientObj('Client 1', [])];
+  }
+
+  function saveClients() {
+    try { localStorage.setItem('f13-clients', JSON.stringify(clients)); } catch (e) {}
+    try { localStorage.setItem('f13-active-client', activeClientId); } catch (e) {}
+  }
+
+  function getClient() {
+    return clients.find(c => c.id === activeClientId) || clients[0];
+  }
+
+  let clients = loadClients();
+  let activeClientId = (() => {
+    let id = null;
+    try { id = localStorage.getItem('f13-active-client'); } catch (e) {}
+    if (!id || !clients.find(c => c.id === id)) id = clients[0].id;
+    return id;
+  })();
+
+  let cases = getClient().cases;
+  let checkedIds = new Set(getClient().checkedIds || []);
+  let inactionInitialized = !!getClient().inactionInitialized;
   let selectedImpact = 'low';
 
-  function loadCases() {
-    try {
-      const raw = localStorage.getItem('f13-cases');
-      const parsed = raw ? JSON.parse(raw) : [];
-      return Array.isArray(parsed) ? parsed : [];
-    } catch (e) {
-      return [];
-    }
-  }
-
-  function saveCases() {
-    try {
-      localStorage.setItem('f13-cases', JSON.stringify(cases));
-    } catch (e) {
-      /* stockage indisponible (mode privé, quota) — on continue sans persistance */
-    }
-  }
-
   const IMPACT_COEFF = { low: 1.0, middle: 1.3, high: 1.6 };
-  const IMPACT_LABELS = { low: 'Faible', middle: 'Moyen', high: 'Élevé' };
+  const IMPACT_LABELS = { low: 'Faible/Non', middle: 'Moyen', high: 'Élevé' };
   const CLASSIF_LABELS = { NOW: 'PRIORITAIRE', NEXT: 'À PLANIFIER', LATER: 'À ÉTUDIER' };
+
+  // ── Sélecteur de client ──
+  function renderClientSelector() {
+    const select = document.getElementById('client-select');
+    select.innerHTML = clients.map(c =>
+      `<option value="${c.id}"${c.id === activeClientId ? ' selected' : ''}>${escHtml(c.name)}</option>`
+    ).join('');
+  }
+
+  function switchClient(id) {
+    activeClientId = id;
+    cases = getClient().cases;
+    checkedIds = new Set(getClient().checkedIds || []);
+    inactionInitialized = !!getClient().inactionInitialized;
+    saveClients();
+    renderCases();
+    if (document.getElementById('tab-inaction').classList.contains('active')) renderInaction();
+    const slider = document.getElementById('taux-slider');
+    slider.value = getClient().salaire || 2000;
+    updateSlider();
+  }
+
+  document.getElementById('client-select').addEventListener('change', e => switchClient(e.target.value));
+
+  document.getElementById('btn-new-client').addEventListener('click', () => {
+    const name = prompt('Nom du nouveau client :');
+    if (!name || !name.trim()) return;
+    const client = createClientObj(name.trim(), []);
+    clients.push(client);
+    activeClientId = client.id;
+    saveClients();
+    renderClientSelector();
+    switchClient(client.id);
+  });
+
+  document.getElementById('btn-rename-client').addEventListener('click', () => {
+    const client = getClient();
+    const name = prompt('Renommer ce client :', client.name);
+    if (!name || !name.trim()) return;
+    client.name = name.trim();
+    saveClients();
+    renderClientSelector();
+  });
+
+  document.getElementById('btn-delete-client').addEventListener('click', () => {
+    const client = getClient();
+    if (!confirm(`Supprimer le client « ${client.name} » et tous ses processus ? Cette action est irréversible.`)) return;
+    clients = clients.filter(c => c.id !== client.id);
+    if (clients.length === 0) clients.push(createClientObj('Client 1', []));
+    activeClientId = clients[0].id;
+    saveClients();
+    renderClientSelector();
+    switchClient(activeClientId);
+  });
+
+  // ── Export / Import (tous les clients à la fois) ──
+  document.getElementById('btn-export-clients').addEventListener('click', () => {
+    const data = { exportedAt: new Date().toISOString(), clients };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `f13-qualification-clients-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  document.getElementById('btn-import-clients').addEventListener('click', () => {
+    document.getElementById('import-file-input').click();
+  });
+
+  document.getElementById('import-file-input').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        const imported = Array.isArray(data.clients) ? data.clients : (Array.isArray(data) ? data : null);
+        if (!imported || !imported.length) { alert('Fichier invalide ou vide.'); return; }
+        const replace = confirm('Remplacer la liste actuelle de clients par celle importée ?\n(Annuler = ajouter ces clients à la suite de la liste actuelle)');
+        if (replace) {
+          clients = imported;
+        } else {
+          imported.forEach(c => {
+            if (clients.find(x => x.id === c.id)) c.id = 'client-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7);
+            clients.push(c);
+          });
+        }
+        if (!clients.length) clients.push(createClientObj('Client 1', []));
+        activeClientId = clients[0].id;
+        saveClients();
+        renderClientSelector();
+        switchClient(activeClientId);
+      } catch (err) {
+        alert('Impossible de lire ce fichier (JSON invalide).');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
 
   // ── Tabs ──
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -787,9 +1128,18 @@
     });
   });
 
+  // ── Fréquence normalisée par semaine ──
+  const FREQ_DIVISOR = { week: 1, month: 4, year: 52 };
+  const FREQ_UNIT_LABELS = { week: 'semaine', month: 'mois', year: 'année' };
+  const FREQ_UNIT_SHORT = { week: 'sem.', month: 'mois', year: 'an' };
+
+  function freqHebdo(c) {
+    return c.freq / (FREQ_DIVISOR[c.freqUnit] || 1);
+  }
+
   // ── Calcul score ──
   function calcScore(c) {
-    const raw = c.freq * c.duree * c.penibilite * (1 + (c.clarte + c.donnees) / 10);
+    const raw = freqHebdo(c) * c.duree * c.penibilite * (1 + (c.clarte + c.donnees) / 10);
     return Math.round(raw * IMPACT_COEFF[c.impact]);
   }
 
@@ -803,6 +1153,7 @@
   document.getElementById('btn-add').addEventListener('click', () => {
     const nom       = document.getElementById('f-nom').value.trim();
     const freq      = parseFloat(document.getElementById('f-freq').value);
+    const freqUnit  = document.getElementById('f-freq-unit').value;
     const duree     = parseFloat(document.getElementById('f-duree').value);
     const penibilite= parseFloat(document.getElementById('f-penibilite').value);
     const clarte    = parseFloat(document.getElementById('f-clarte').value);
@@ -823,9 +1174,9 @@
     }
     errEl.style.display = 'none';
 
-    const entry = { id: Date.now(), nom, freq, duree, penibilite, clarte, donnees, impact: selectedImpact };
+    const entry = { id: Date.now(), nom, freq, freqUnit, duree, penibilite, clarte, donnees, impact: selectedImpact, details: '' };
     cases.push(entry);
-    saveCases();
+    saveClients();
     renderCases();
     resetForm();
   });
@@ -833,6 +1184,7 @@
   function resetForm() {
     document.getElementById('f-nom').value = '';
     document.getElementById('f-freq').value = '';
+    document.getElementById('f-freq-unit').value = 'week';
     document.getElementById('f-duree').value = '';
     document.getElementById('f-penibilite').value = '';
     document.getElementById('f-clarte').value = '';
@@ -858,25 +1210,37 @@
       return;
     }
 
-    const sorted = [...cases].sort((a, b) => calcScore(b) - calcScore(a));
-    list.innerHTML = sorted.map(c => {
+    const CLASSIF_ORDER = { NOW: 0, NEXT: 1, LATER: 2 };
+    const MEDALS = ['🥇', '🥈', '🥉'];
+    const sorted = [...cases].sort((a, b) => {
+      const orderDiff = CLASSIF_ORDER[getClassification(calcScore(a))] - CLASSIF_ORDER[getClassification(calcScore(b))];
+      if (orderDiff !== 0) return orderDiff;
+      return Math.round(freqHebdo(b) * b.duree) - Math.round(freqHebdo(a) * a.duree);
+    });
+    list.innerHTML = sorted.map((c, index) => {
       const score = calcScore(c);
       const classif = getClassification(score);
-      const tempsHebdo = Math.round(c.freq * c.duree);
+      const tempsHebdo = Math.round(freqHebdo(c) * c.duree);
+      const unit = c.freqUnit || 'week';
+      const medal = MEDALS[index] ? `${MEDALS[index]} ` : '';
       return `<div class="case-card" data-id="${c.id}">
         <div>
           <div class="case-name">${escHtml(c.nom)}</div>
           <div class="case-meta">
+            <span class="case-meta-item"><i data-lucide="repeat" size="12"></i> ${c.freq}×/${FREQ_UNIT_SHORT[unit]}</span>
             <span class="case-meta-item"><i data-lucide="clock" size="12"></i> ${tempsHebdo} min/sem.</span>
             <span class="case-meta-item"><i data-lucide="zap" size="12"></i> Pénibilité ${c.penibilite}/5</span>
             <span class="case-meta-item"><i data-lucide="file-text" size="12"></i> Clarté ${c.clarte}/5</span>
             <span class="case-meta-item"><i data-lucide="database" size="12"></i> Données ${c.donnees}/5</span>
             <span class="case-meta-item"><i data-lucide="trending-up" size="12"></i> Impact ${IMPACT_LABELS[c.impact].toLowerCase()}</span>
+            <button class="details-btn${c.details ? ' has-details' : ''}" data-details="${c.id}">
+              <i data-lucide="file-pen-line" size="12"></i> Détails
+            </button>
           </div>
         </div>
         <div class="case-right">
           <div class="case-priority-group">
-            <div class="case-priority-label">Priorité</div>
+            <div class="case-priority-label">${medal}Priorité</div>
             <span class="badge badge-${classif.toLowerCase()}">${CLASSIF_LABELS[classif]}</span>
           </div>
           <button class="delete-btn" data-del="${c.id}" title="Supprimer">
@@ -893,20 +1257,24 @@
         e.stopPropagation();
         const id = parseInt(btn.dataset.del);
         cases = cases.filter(c => c.id !== id);
+        getClient().cases = cases;
         checkedIds.delete(id);
-        saveCases();
+        getClient().checkedIds = Array.from(checkedIds);
+        saveClients();
         renderCases();
+      });
+    });
+
+    document.querySelectorAll('[data-details]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const id = parseInt(btn.dataset.details);
+        openDetailsModal(id);
       });
     });
   }
 
-  // ── Init avec données sauvegardées ──
-  renderCases();
-
   // ── ONGLET INACTION ──
-  let checkedIds = new Set();
-  let inactionInitialized = false;
-
   function renderInaction() {
     const container = document.getElementById('inaction-cases-list');
 
@@ -921,13 +1289,16 @@
       return;
     }
 
-    // Pré-cocher NOW et NEXT — une seule fois, pour ne pas écraser les choix du client
+    // Pré-cocher NOW et NEXT — une seule fois par client, pour ne pas écraser les choix
     if (!inactionInitialized) {
       cases.forEach(c => {
         const classif = getClassification(calcScore(c));
         if (classif === 'NOW' || classif === 'NEXT') checkedIds.add(c.id);
       });
       inactionInitialized = true;
+      getClient().inactionInitialized = true;
+      getClient().checkedIds = Array.from(checkedIds);
+      saveClients();
     }
 
     const sorted = [...cases].sort((a, b) => calcScore(b) - calcScore(a));
@@ -935,14 +1306,15 @@
       const score = calcScore(c);
       const classif = getClassification(score);
       const isChecked = checkedIds.has(c.id);
-      const tempsHebdo = Math.round(c.freq * c.duree);
+      const tempsHebdo = Math.round(freqHebdo(c) * c.duree);
+      const unit = c.freqUnit || 'week';
       return `<div class="inaction-case ${isChecked ? 'checked' : ''}" data-cid="${c.id}">
         <div class="case-checkbox">
           ${isChecked ? '<i data-lucide="check" size="14" style="color:#fff;stroke-width:3"></i>' : ''}
         </div>
         <div class="inaction-case-info">
           <div class="inaction-case-name">${escHtml(c.nom)}</div>
-          <div class="inaction-case-detail">${tempsHebdo} min/sem. · ${c.freq}×/sem. × ${c.duree} min</div>
+          <div class="inaction-case-detail">${tempsHebdo} min/sem. · ${c.freq}×/${FREQ_UNIT_SHORT[unit]} × ${c.duree} min</div>
         </div>
         <div class="inaction-case-right">
           <span class="badge badge-${classif.toLowerCase()}">${CLASSIF_LABELS[classif]}</span>
@@ -958,6 +1330,8 @@
         const id = parseInt(el.dataset.cid);
         if (checkedIds.has(id)) checkedIds.delete(id);
         else checkedIds.add(id);
+        getClient().checkedIds = Array.from(checkedIds);
+        saveClients();
         el.classList.toggle('checked');
         const cb = el.querySelector('.case-checkbox');
         const isNowChecked = checkedIds.has(id);
@@ -972,13 +1346,15 @@
   let animFrame = null;
 
   function updateStats() {
-    const taux = parseInt(document.getElementById('taux-slider').value);
+    const salaire = parseInt(document.getElementById('taux-slider').value);
+    // Coût employeur réel : salaire net → brut (÷0.77) → coût total (×1.42) → taux horaire (÷151.67h)
+    const tauxHoraire = (salaire / 0.77 * 1.42) / 151.67;
     let tempsTotal = 0;
     cases.forEach(c => {
-      if (checkedIds.has(c.id)) tempsTotal += c.freq * c.duree;
+      if (checkedIds.has(c.id)) tempsTotal += freqHebdo(c) * c.duree;
     });
     const tempsMoisH = (tempsTotal * 4) / 60;
-    const mensuel = Math.round(tempsMoisH * taux);
+    const mensuel = Math.round(tempsMoisH * tauxHoraire);
     const annuel = mensuel * 12;
 
     animateCounter('stat-temps', tempsTotal, ' min');
@@ -1019,10 +1395,13 @@
     const pct = ((val - min) / (max - min)) * 100;
     slider.style.setProperty('--pct', pct + '%');
     sliderDisplay.textContent = val;
+    getClient().salaire = val;
+    saveClients();
     updateStats();
   }
 
   slider.addEventListener('input', updateSlider);
+  slider.value = getClient().salaire || 2000;
   updateSlider();
 
   // ── Utils ──
@@ -1034,6 +1413,55 @@
   document.getElementById('f-nom').addEventListener('keydown', e => {
     if (e.key === 'Enter') document.getElementById('btn-add').click();
   });
+
+  // ── MODALE DÉTAILS ──
+  let modalCaseId = null;
+
+  const modalOverlay = document.getElementById('modal-details');
+  const modalCaseName = document.getElementById('modal-case-name');
+  const modalTextarea = document.getElementById('modal-textarea');
+
+  function openDetailsModal(id) {
+    const c = cases.find(x => x.id === id);
+    if (!c) return;
+    modalCaseId = id;
+    modalCaseName.textContent = c.nom;
+    modalTextarea.value = c.details || '';
+    modalOverlay.classList.add('open');
+    lucide.createIcons();
+    modalTextarea.focus();
+  }
+
+  function closeDetailsModal() {
+    modalOverlay.classList.remove('open');
+    modalCaseId = null;
+  }
+
+  document.getElementById('modal-close').addEventListener('click', closeDetailsModal);
+  document.getElementById('modal-cancel').addEventListener('click', closeDetailsModal);
+
+  document.getElementById('modal-save').addEventListener('click', () => {
+    if (modalCaseId === null) return;
+    const c = cases.find(x => x.id === modalCaseId);
+    if (c) {
+      c.details = modalTextarea.value.trim();
+      saveClients();
+      renderCases();
+    }
+    closeDetailsModal();
+  });
+
+  modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeDetailsModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeDetailsModal();
+  });
+
+  // ── Init ──
+  renderClientSelector();
+  renderCases();
 </script>
 </body>
 </html>
